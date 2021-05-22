@@ -11,12 +11,12 @@ class SearchResultContainer extends Component {
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
-    this.searchGiphy("kittens");
+    this.searchGoogle("");
   }
 
-  searchGiphy = query => {
+  searchGoogle = query => {
     API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
+      .then(res => this.setState({ results: res.data.results }))
       .catch(err => console.log(err));
   };
 
@@ -28,10 +28,10 @@ class SearchResultContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
+  // When the form is submitted, search the GoogleBooks API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchGiphy(this.state.search);
+    this.searchGoogle(this.state.search);
   };
 
   render() {
