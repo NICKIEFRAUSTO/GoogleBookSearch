@@ -9,12 +9,12 @@ class SearchResultContainer extends Component {
     results: []
   };
 
-  // When this component mounts, search the Giphy API for pictures of kittens
+  // When this component mounts, search the GoogleBooksAPI for books
   componentDidMount() {
-    this.searchGoogle("");
+    this.searchGoogleAPI("");
   }
 
-  searchGoogle = query => {
+  searchGoogleAPI = query => {
     API.search(query)
       .then(res => this.setState({ results: res.data.results }))
       .catch(err => console.log(err));
@@ -28,10 +28,10 @@ class SearchResultContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the GoogleBooks API for `this.state.search`
+  // When the form is submitted, search the GoogleBooksAPI for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchGoogle(this.state.search);
+    this.searchGoogleAPI(this.state.search);
   };
 
   render() {

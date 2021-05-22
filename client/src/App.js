@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import SearchForm from "./Components/SearchForm"
+import SearchResultContainer from "./Components/SearchResultContainer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </p>
       <SearchForm/>
       </div>
+      <SearchResultContainer />;
     </div>
   );
 }
