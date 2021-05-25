@@ -6,7 +6,7 @@ import API from "../utils/API";
 class SearchResultContainer extends Component {
   state = {
     search: "",
-    results: []
+    results: [] 
   };
 
   // When this component mounts, search the GoogleBooksAPI for books
@@ -16,8 +16,11 @@ class SearchResultContainer extends Component {
 
   searchGoogleAPI = query => {
     API.search(query)
-      .then(res => this.setState({ results: res.data.results }))
+      .then(res => {
+        console.log("results", res)
+        this.setState({ results: res.data.items })})
       .catch(err => console.log(err));
+      
   };
 
   handleInputChange = event => {
@@ -32,6 +35,7 @@ class SearchResultContainer extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchGoogleAPI(this.state.search);
+    console.log(this.state.search);
   };
 
   render() {
@@ -42,7 +46,10 @@ class SearchResultContainer extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} />
+        <ResultList results={this.state.results} 
+          search={this.state.search}
+         
+        />
       </div>
     );
   }
