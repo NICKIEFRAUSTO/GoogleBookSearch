@@ -22,6 +22,6 @@ app.use(routes);
 // ---------------Connect to the MongoDB------------------------------//
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooksdb")
 
-app.listen(PORT, function() => {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+app.listen(PORT, function() {
+  console.log(`🌎 ==> API server now listening on port ${PORT}!`);
 });
