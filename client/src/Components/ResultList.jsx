@@ -8,7 +8,7 @@ function ResultList(props) {
           <td><h3>{book.volumeInfo.title}</h3>
           <h4>{book.volumeInfo.authors}</h4>
           <p>{book.volumeInfo.description}</p>
-          <a href={book.volumeInfo.infoLink}>{book.volumeInfo.infoLink}</a>
+          <a href={book.volumeInfo.infoLink}><button>VIEW</button> <button>SAVE</button></a>
           </td>
           
         </tr>
