@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
+import Navbar from "./Navbar";
 
 class SearchResultContainer extends Component {
   state = {
@@ -41,6 +42,7 @@ class SearchResultContainer extends Component {
   render() {
     return (
       <div>
+      <Navbar/>
         <SearchForm
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
