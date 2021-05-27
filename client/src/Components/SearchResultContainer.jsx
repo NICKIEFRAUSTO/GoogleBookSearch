@@ -4,13 +4,14 @@ import ResultList from "./ResultList";
 import API from "../utils/API";
 import Navbar from "./Navbar";
 
+
 class SearchResultContainer extends Component {
   state = {
     search: "",
     results: [] 
   };
 
-  // When this component mounts, search the GoogleBooksAPI for books
+  // --------------------------------When this component mounts, search the GoogleBooksAPI for books-------------------------------------//
   componentDidMount() {
     this.searchGoogleAPI("");
   }
@@ -32,7 +33,7 @@ class SearchResultContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the GoogleBooksAPI for `this.state.search`
+  // -------------------------------------When the form is submitted, search the GoogleBooksAPI for `this.state.search`--------------------------------//
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchGoogleAPI(this.state.search);
@@ -50,8 +51,10 @@ class SearchResultContainer extends Component {
         />
         <ResultList results={this.state.results} 
           search={this.state.search}
-         
         />
+        
+        
+
       </div>
     );
   }

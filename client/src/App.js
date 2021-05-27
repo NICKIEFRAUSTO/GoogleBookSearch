@@ -1,20 +1,23 @@
 import React from "react";
-import SearchResultContainer from "./Components/SearchResultContainer";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="App">
-      <div className="App-header">        
-      <h2>(React) Google Book Search</h2>
-      <p className="App-intro">
-        Search for and save books of interest.
-      </p>
-      <SearchResultContainer />;
-      
+    <Router>
+      <div>        
+      <Switch>
+          <Route exact path ="/">
+            <Home/>
+          </Route>
+          <Route exact path="/saved">
+            
+          </Route>
+          
+        </Switch>
       </div>
-    </div>
+    </Router>
   );
 }
-
 
 export default App;

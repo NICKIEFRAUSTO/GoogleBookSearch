@@ -1,4 +1,5 @@
 import React from "react";
+import API from "../utils/saveApi";
 
 function ResultList(props) {
     let books=props.results;
@@ -8,9 +9,8 @@ function ResultList(props) {
           <td><h3>{book.volumeInfo.title}</h3>
           <h4>{book.volumeInfo.authors}</h4>
           <p>{book.volumeInfo.description}</p>
-          <a href={book.volumeInfo.infoLink} target="_blank" rel="noopener"> <button>View</button></a>  
-          <button>Save</button>
-          
+          <a href={book.volumeInfo.infoLink} target="_blank" rel="noopener noreferrer"> <button>View</button></a>  
+          <button onClick={()=>API.saveBook({book})}>Save</button>
           </td>
           
         </tr>
