@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
-import Navbar from "./Navbar";
+
 
 
 class SearchResultContainer extends Component {
@@ -24,6 +24,15 @@ class SearchResultContainer extends Component {
       .catch(err => console.log(err));
       
   };
+// ----------------search the database for the saved books --------------------------//
+  searchBookDB = query => {
+    API.searchSaved(query)
+    .then(res => {
+      console.log("results", res)
+      this.setState({ results: res.data.items })})
+    .catch(err => console.log(err));
+  }
+
 
   handleInputChange = event => {
     const name = event.target.name;
@@ -43,7 +52,7 @@ class SearchResultContainer extends Component {
   render() {
     return (
       <div>
-      <Navbar/>
+      
         <SearchForm
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}

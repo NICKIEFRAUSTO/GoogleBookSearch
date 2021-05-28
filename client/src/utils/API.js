@@ -8,5 +8,13 @@ export default {
   search: function(query) {
     // console.log("query", BASEURI+query)
     return axios.get(BASEURI+query);
+  },
+  searchSaved: function(){
+    return axios.get("/api/books");
   }
+};
+
+const getSavedBooks = async ()=>{
+  const res = await axios.get("http://localhost:3001/api/books")
+  console.log(res)
 };

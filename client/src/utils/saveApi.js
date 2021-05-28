@@ -12,5 +12,8 @@ import axios from "axios";
     // --------------------------Saves a book to the database---------------------------------//
     saveBook: function(bookData) {
       return axios.post("/api/books", bookData);
+    },
+    getAllBooks: function(){
+      return axios.get("*")
     }
   };

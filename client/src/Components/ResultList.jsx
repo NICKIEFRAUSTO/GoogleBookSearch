@@ -10,7 +10,7 @@ function ResultList(props) {
           <h4>{book.volumeInfo.authors}</h4>
           <p>{book.volumeInfo.description}</p>
           <a href={book.volumeInfo.infoLink} target="_blank" rel="noopener noreferrer"> <button>View</button></a>  
-          <button onClick={()=>API.saveBook({book})}>Save</button>
+          <button onClick={()=>API.saveBook(book)}>Save</button>
           </td>
           
         </tr>
