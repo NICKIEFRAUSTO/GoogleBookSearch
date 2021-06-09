@@ -1,18 +1,31 @@
 import axios from "axios";
 
+
   export default {
-    // ----------------------------Gets all books---------------------------------------------//
-    getBooks: function() {
-      return axios.get("/api/books");
+    // -----------------------Get saved books-------------------------------------------//
+    getBooks: function () {
+      axios.get('/api/books')
+      .then((response)=>{
+        const data = response.data;
+        this.setState({books:data});
+        console.log('Saved books data has been received');
+      })
+      .catch(()=>{
+        alert('Error retrieving saved books');
+      });
     },
     // --------------------------Deletes the book with the given id----------------------------//
     deleteBook: function(id) {
-      return axios.delete("/api/books" + id);
+       axios.delete("/api/books/" + id)
+      
     },
     // --------------------------Saves a book to the database---------------------------------//
-    saveBook: function(bookData) {
-      return axios.post("/api/books", bookData);
+    saveBook: function(volumeInfo) {
+      return axios.post("/api/books", volumeInfo)
+      .then (res => 
+        alert ('book saved successfully'))
     },
+    
     getAllBooks: function(){
       return axios.get("*")
     }

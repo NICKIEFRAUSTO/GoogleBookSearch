@@ -11,10 +11,9 @@ export default {
   },
   searchSaved: function(){
     return axios.get("/api/books");
+  },
+  deleteSaved: function(){
+    return axios.delete("api/book/id")
   }
 };
 
-const getSavedBooks = async ()=>{
-  const res = await axios.get("http://localhost:3001/api/books")
-  console.log(res)
-};

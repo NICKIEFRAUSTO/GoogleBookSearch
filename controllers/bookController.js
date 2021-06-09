@@ -6,7 +6,7 @@ create: function(req, res) {
   
     db
     .create({
-
+      id:req.body.volumeInfo.id,
       title: req.body.volumeInfo.title,
       authors:[
         req.body.volumeInfo.authors,

@@ -5,7 +5,7 @@ function ResultList(props) {
     let books=props.results;
     let rows=books.map(book=>(
        <tr key={book.title}>
-        <td>{<img alt={book.volumeInfo.imageLinks.thumbnail} className= "img-fluid" src={book.volumeInfo.imageLinks.thumbnail} />}</td>
+        <td>{<img alt={book.volumeInfo.imageLinks.thumbnail} src={book.volumeInfo.imageLinks.thumbnail} />}</td>
           <td><h3>{book.volumeInfo.title}</h3>
           <h4>{book.volumeInfo.authors}</h4>
           <p>{book.volumeInfo.description}</p>

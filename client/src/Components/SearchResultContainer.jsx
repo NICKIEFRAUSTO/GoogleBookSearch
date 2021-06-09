@@ -2,18 +2,20 @@ import React, { Component } from "react";
 import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
-
+import displaySavedBooks from "./SavedList";
 
 
 class SearchResultContainer extends Component {
   state = {
     search: "",
-    results: [] 
+    results: [],
+   
   };
 
   // --------------------------------When this component mounts, search the GoogleBooksAPI for books-------------------------------------//
-  componentDidMount() {
-    this.searchGoogleAPI("");
+  componentDidMount = () => {
+    this.searchGoogleAPI("")
+    
   }
 
   searchGoogleAPI = query => {
@@ -24,14 +26,6 @@ class SearchResultContainer extends Component {
       .catch(err => console.log(err));
       
   };
-// ----------------search the database for the saved books --------------------------//
-  searchBookDB = query => {
-    API.searchSaved(query)
-    .then(res => {
-      console.log("results", res)
-      this.setState({ results: res.data.items })})
-    .catch(err => console.log(err));
-  }
 
 
   handleInputChange = event => {
@@ -46,19 +40,21 @@ class SearchResultContainer extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchGoogleAPI(this.state.search);
+    // this.displaySavedBooks(this.state.books);
     console.log(this.state.search);
   };
 
   render() {
     return (
       <div>
-      
+        
         <SearchForm
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} 
+        <ResultList 
+          results={this.state.results} 
           search={this.state.search}
         />
         

@@ -1,31 +1,12 @@
-// import React from react
-// import savedGoogleBooks from "../Components/SavedList";
-// import API from "../utils/API";
+import React from "react";
+import Saved from "../Components/SavedList";
 
+function Save() {
+    return (
+        <div>          
+        <Saved/>
+        </div>      
+       );
+ }
+ export default Save;
 
-
-// useEffect(()=>{
-//   loadSavedBooks();
-// }, []);
-
-// function loadSavedBooks(props){
-//   let books=props.results;
-//   API.searchSaved()
-  
-// return(
-// <div> 
-
-
-// </div> 
-// // <ul 
-// //   <li props></li>
-
-// //   </ul>
-  
-// //   </div>
-
-// );
-
-
-  
-// 
