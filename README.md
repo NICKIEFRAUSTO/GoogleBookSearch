@@ -20,9 +20,9 @@ The saved list displays the title, a description, a link to view the book in a n
 #
 ##
 ## The site is deployed at Heroku 
-# link: 
-# GitHub Repo 
-#link: 
+#  [Heroku Link](https://still-garden-42113.herokuapp.com)
+#  [GitHub Repo](https://github.com/NICKIEFRAUSTO/GoogleBookSearch.git)
+#
 #
 ##
 

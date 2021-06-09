@@ -20,7 +20,15 @@ app.use(routes);
 // Define any API routes before this runs
 // 
 // ---------------Connect to the MongoDB------------------------------//
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooksdb")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooksdb",
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+}
+
+);
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now listening on port ${PORT}!`);
