@@ -14,7 +14,9 @@ The database for saving the searched book list is MongoDB.
 The search bar allows searches of the Google Books API - searches performed using axios. 
 The results are displayed with an image, a title, authors, and a brief description. 
 The view button opens a link to a new page for the book details on Google Play. 
-The save button saves the book to the database. 
+The save button saves the book to My Saved Books.
+Use the Navigation bar to see the books in the saved list.
+The saved list displays the title, a description, a link to view the book in a new page, and a delete button.
 #
 ##
 ## The site is deployed at Heroku 
